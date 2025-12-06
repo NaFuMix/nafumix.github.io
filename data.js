@@ -58,7 +58,7 @@ export const certificate = [
         pic_url:"/certificate/Cer-3.jpg"
     },
     {
-        name:"ค่ายวิศวกรรมคอมพิวเตอร์ รุ่นเยาว์ Season 10",
+        name:"ค่ายบรรพชีวินวิทยาและธรณีวิทยา",
         pic_url:"/certificate/Cer-4.jpg"
     },
     {
@@ -70,11 +70,11 @@ export const certificate = [
         pic_url:"/certificate/Cer-6.jpg"
     },
     {
-        name:"ค่ายบรรพชีวินวิทยาและธรณีวิทยา",
+        name:"การป้องกันประกันอุบัติเหตุและ การประกันภัย",
         pic_url:"/certificate/Cer-7.jpg"
     },
     {
-        name:"การป้องกันประกันอุบัติเหตุและ การประกันภัย",
+        name:"เข้าร่วมโครงการค่ายปฏิบัติการด้านวิทยาศาสตร์ ระดับชั้นมัธยมศึกษาปีที่ 4",
         pic_url:"/certificate/Cer-8.JPG"
     },
     {
