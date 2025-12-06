@@ -43,6 +43,41 @@ hr{
     transition: all 0.3s ease-in-out;
 }
 
+#icon1{
+    width: 100px;
+    position: absolute;
+    animation: myicon 5s infinite reverse;
+}
+
+@keyframes myicon {
+  0% {top: 200px; right: 80px;}
+  50% {top: 300px;right: 80px;}
+  100% {top: 200px; right: 80px;}
+}
+
+#icon2{
+    width: 100px;
+    position: absolute;
+    animation: myicon2 5s infinite reverse;
+}
+
+@keyframes myicon2 {
+  0% {top: 500px; right: 600px;}
+  50% {top: 300px;right: 600px;}
+  100% {top: 500px; right: 600px;}
+}
+#icon3{
+    width: 100px;
+    position: absolute;
+    animation: myicon3 8s infinite reverse;
+}
+
+@keyframes myicon3 {
+  0% {top: 600px; right: 700px;}
+  50% {top: 200px;right: 700px;}
+  100% {top: 600px; right: 700px;}
+}
+
 .card h1{
     font-weight: bolder;
 }
