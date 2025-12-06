@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: "Kanit", sans-serif;
+    background-color: rgb(0, 5, 41);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+body::after{
+    width: 100vw;
+    height: 100vh;
+    content: '';
+    background-color: rgba(255, 0, 0, 0.359);
+    position: fixed;
+    top: 50%;
+    border-radius: 35%;
+    filter: blur(300px);
+    z-index: -2;
+}
+
+#container{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+}
+
+.card{
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: rgb(0, 5, 41);
+    padding: 10px 30px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.card h1{
+    font-weight: bolder;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card::before, .card::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 0% , purple,blue);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 5px;
+    border-radius: 10px;
+    animation:  5s spin linear infinite;
+}
+
+.card:hover{
+    box-shadow: 2px 2px 20px white;
+}
+
+@keyframes spin{
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
+
+.card::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+.picture img{
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.picture img:hover{
+    box-shadow: 2px 2px 20px white;
+    scale: 1.1;
+}
+
+nav{
+    width: 100vw;
+    position: fixed;
+    border: none;
+    border-radius: 0 0 15px 15px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav #nav-left{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav #nav-left h3:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+nav #nav-icon{
+    width: 11%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+.img-icon a{
+    text-decoration: none;
+}
+
+.img-icon img{
+    transition: all 0.3s ease-in-out;
+    width: 50px;
+}
+
+.img-icon img:hover{
+    scale: 1.1;
+}
+
+
+
+
+#project{
+    width: 100wv;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    gap: 100px;
+}
+
+#project img{
+    width: 700px;
+    height: 500px;
+}
+
+.flex-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.text-container{
+    border: 2px solid white;
+    height: max-content;
+    border-radius: 15px;
+    width: 30%;
+    padding: 20px;
+}
+
+.button{
+    width: 80px;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(57, 80, 255);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover{
+    background-color: rgb(32, 47, 255);
+    scale: 1.1;
+}
+
+
+#certificate{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    gap: 50px;
+}
+
+.certificate-img img{
+    width: 300px;
+}
+
+.certificate-img h2{
+    width: 300px;
+    text-align: center;
+}
