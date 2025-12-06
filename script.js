@@ -25,6 +25,9 @@ datas.forEach(data => {
         window.open(data.link, "_blank")
     })
 
+    let hr_element = document.createElement("hr")
+    
+
     div_element.appendChild(h1_element)
     div_element.appendChild(p_element)
     div_element.appendChild(button_element)
@@ -32,6 +35,7 @@ datas.forEach(data => {
     div_flex_row.appendChild(div_element)
     div_flex_row.appendChild(img_element)
     project.appendChild(div_flex_row)
+    project.appendChild(hr_element)
 })
 
 
