@@ -50,11 +50,11 @@ export const certificate = [
         pic_url:"/certificate/Cer-1.png"
     },
     {
-        name:"Basic Portfolio Website",
+        name:"Basic to Advance Road to Computer Engineering",
         pic_url:"/certificate/Cer-2.jpg"
     },
     {
-        name:"Basic to Advance Road to Computer Engineering",
+        name:"เข้าร่วมโครงการค่ายวิชาการด้านวิทยาศาสตร์ ระดับชั้นมัธยมศึกษาปีที่ 5",
         pic_url:"/certificate/Cer-3.jpg"
     },
     {
@@ -62,11 +62,11 @@ export const certificate = [
         pic_url:"/certificate/Cer-4.jpg"
     },
     {
-        name:"ออกแบบโดยใช้โปรแกรม คอมพิวเตอร์",
+        name:"ค่ายวิศวกรรมคอมพิวเตอร์ รุ่นเยาว์ Season 10",
         pic_url:"/certificate/Cer-5.jpg"
     },
     {
-        name:"เข้าร่วมโครงการค่ายวิชาการด้านวิทยาศาสตร์ ระดับชั้นมัธยมศึกษาปีที่ 5",
+        name:"แข่งออกแบบโดยใช้โปรแกรมออกแบบ",
         pic_url:"/certificate/Cer-6.jpg"
     },
     {
