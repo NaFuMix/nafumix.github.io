@@ -37,5 +37,3 @@ datas.forEach(data => {
     project.appendChild(div_flex_row)
     project.appendChild(hr_element)
 })
-
-

@@ -9,6 +9,9 @@ certificate.forEach(cer => {
 
     let img_element = document.createElement("img")
     img_element.src = cer.pic_url
+    // img_element.addEventListener("click", () => {
+    //     img_element.setAttribute("class","")
+    // })
 
     let h2_element = document.createElement("h2")
     h2_element.innerHTML = cer.name
