@@ -153,6 +153,7 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     overflow: hidden;
+    z-index: 10;
 }
 
 nav #nav-left{
@@ -261,24 +262,39 @@ nav a{
 
 
 #certificate{
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding-top: 150px;
-    padding-bottom: 100px;
+    padding: 150px 100px 0 0;
     gap: 50px;
 }
 
+.certificate-img{
+    transition: scale 0.3s ease;
+}
+
+.certificate-img:hover{
+    scale: 1.1;
+}
 
 .certificate-img img{
-    width: 20vw;
-    position: relative;
+    width: 25vw;
+    height: auto;
+    cursor: pointer;
     display: block;
+    transition: all 0.5s ease;
+}
+
+.scale{
+    width: 45vw !important;
+    font-size: 200%;
 }
 
 .certificate-img h2{
-    width: 20vw;
+    width: 25vw;
     text-align: center;
+    display: block;
+    transition: all 0.5s ease;
 }
