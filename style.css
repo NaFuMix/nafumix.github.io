@@ -40,6 +40,7 @@ hr{
     padding: 10px 30px;
     position: relative;
     transition: all 0.3s ease-in-out;
+    top: 5%;
 }
 
 .card h1{
@@ -65,6 +66,7 @@ hr{
     padding: 5px;
     border-radius: 10px;
     animation:  5s spin linear infinite;
+    filter: blur(10px);
 }
 
 .card:hover{
@@ -269,8 +271,11 @@ nav a{
     gap: 50px;
 }
 
+
 .certificate-img img{
     width: 20vw;
+    position: relative;
+    display: block;
 }
 
 .certificate-img h2{
