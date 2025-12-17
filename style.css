@@ -87,11 +87,22 @@ hr{
     opacity: 0.5;
 }
 
-.picture img{
+.picture{
+    width: 20%;
+    height: 40%;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
     position: relative;
     animation: mymove 5s infinite;
+    background-color: black;
+}
+
+.picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
 }
 
 @keyframes mymove {
@@ -100,7 +111,7 @@ hr{
   100% {top: 0px;}
 }
 
-.picture img:hover{
+.picture:hover{
     box-shadow: 2px 2px 15px whitesmoke;
     scale: 1.1;
 }
