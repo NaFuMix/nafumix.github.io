@@ -1,39 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NaFuMi</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="icon/foxitreader_93874.svg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="icon/foxitreader_93874.svg" type="image/x-icon">
+  <title>NaFuMi</title>
 </head>
 
 <body>
-    <nav>
-        <div id="nav-left">
-            <h1 style="cursor: default;">Portfolio</h1>
-            <a href="index.html">
-                <h3 id="text-1">Home</h3>
-            </a>
-            <a href="project.html">
-                <h3 id="text-2" style="color: red;
+  <nav>
+    <div id="nav-left">
+      <h1 style="cursor: default;">Portfolio</h1>
+      <a href="index.html">
+        <h3 id="text-1">Home</h3>
+      </a>
+      <a href="project.html">
+        <h3 id="text-2" style="color: red;
     text-decoration: underline;">Project</h3>
-            </a>
-            <a href="cerfiticate.html">
-                <h3 id="text-3">Certificate</h3>
-            </a>
-        </div>
-        <div id="nav-icon">
-            <img src="icon/fox_scarf_icon_159308.ico" alt="fox-icon" width="50">
-            <h3 style="cursor: default;">NaFuMix</h3>
-        </div>
-    </nav>
-
-    <div id="project">
+      </a>
+      <a href="cerfiticate.html">
+        <h3 id="text-3">Certificate</h3>
+      </a>
     </div>
+    <div id="nav-icon">
+      <img src="icon/fox_scarf_icon_159308.ico" alt="fox-icon" width="50">
+      <h3 style="cursor: default;">NaFuMix</h3>
+    </div>
+  </nav>
 
-    <script type="module" src="script.js"></script>
+  <div class="slide-container">
+    <div class="slideshow">
+      <div class="text fade">
+        <h2 id="title"></h2>
+        <p id="description"></p> <a id="projectLink" href="#" target="_blank" class="btn"> ดูเว็บไซต์ </a>
+      </div>
+      <div class="image fade"> <img id="slideImage"> </div>
+    </div>
+    <div class="dots" id="dots"></div>
+    <div class="controls"> <button id="prevBtn">◀ ก่อนหน้า</button> <button id="nextBtn">ถัดไป ▶</button> </div>
+  </div>
+
+  <script type="module" src="slideshow.js"></script>
 </body>
 
 </html>

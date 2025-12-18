@@ -1,39 +1,34 @@
-import { datas } from "./data.js";
+import { certificate } from "./data.js";
 
-const project = document.getElementById("project")
+const container = document.getElementById("certificate")
 
-datas.forEach(data => {
-    let div_flex_row = document.createElement("div")
-    div_flex_row.setAttribute("class", "flex-row")
+certificate.forEach(cer => {
+    let n = 0
 
     let div_element = document.createElement("div")
-    div_element.setAttribute("class", "text-container")
-
-    let h1_element = document.createElement("h1")
-    h1_element.innerHTML = data.header
-
-    let p_element = document.createElement("p")
-    p_element.innerHTML = data.text
-
+    div_element.setAttribute("class", "certificate-img")
+    
     let img_element = document.createElement("img")
-    img_element.src = data.img_url
-
-    let button_element = document.createElement("button")
-    button_element.innerHTML = "Link"
-    button_element.setAttribute("class", "button")
-    button_element.addEventListener("click", function () {
-        window.open(data.link, "_blank")
+    img_element.src = cer.pic_url
+    img_element.addEventListener("click", () => {
+        if (n == 0) {
+            img_element.classList.contains("scale")
+            container.querySelectorAll('.scale').forEach(el => el.classList.remove('scale'))
+            if (!img_element.classList.contains("scale")) {
+                img_element.classList.add('scale')
+                h2_element.classList.add('scale')
+            }
+            n += 1
+        } else if (n == 1) {
+            container.querySelectorAll('.scale').forEach(el => el.classList.remove('scale'))
+            n = 0
+        }
     })
 
-    let hr_element = document.createElement("hr")
-    
+    let h2_element = document.createElement("h2")
+    h2_element.innerHTML = cer.name
 
-    div_element.appendChild(h1_element)
-    div_element.appendChild(p_element)
-    div_element.appendChild(button_element)
-
-    div_flex_row.appendChild(div_element)
-    div_flex_row.appendChild(img_element)
-    project.appendChild(div_flex_row)
-    project.appendChild(hr_element)
+    div_element.appendChild(img_element)
+    div_element.appendChild(h2_element)
+    container.appendChild(div_element)
 })
