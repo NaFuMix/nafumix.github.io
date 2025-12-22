@@ -18,7 +18,6 @@ const imageBox = document.querySelector(".image");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
-// =====================
 function createDots() {
   dotsContainer.innerHTML = "";
   datas.forEach((_, index) => {
@@ -42,7 +41,6 @@ function updateDots() {
   });
 }
 
-// =====================
 function showSlide(index) {
   textBox.classList.remove("show");
   imageBox.classList.remove("show");
@@ -56,11 +54,9 @@ function showSlide(index) {
     textBox.classList.add("show");
     imageBox.classList.add("show");
     updateDots();
-    startProgress();
   }, 300);
 }
 
-// =====================
 function nextSlide() {
   currentIndex = (currentIndex + 1) % datas.length;
   showSlide(currentIndex);
@@ -73,10 +69,8 @@ function prevSlide() {
   resetAutoSlide();
 }
 
-// =====================
 function startAutoSlide() {
   slideInterval = setInterval(nextSlide, intervalTime);
-  startProgress();
 }
 
 function resetAutoSlide() {
@@ -84,22 +78,9 @@ function resetAutoSlide() {
   startAutoSlide();
 }
 
-// =====================
-function startProgress() {
-  progressBar.style.transition = "none";
-  progressBar.style.width = "0%";
-
-  setTimeout(() => {
-    progressBar.style.transition = `width ${intervalTime}ms linear`;
-    progressBar.style.width = "100%";
-  }, 50);
-}
-
-// =====================
 prevBtn.addEventListener("click", prevSlide);
 nextBtn.addEventListener("click", nextSlide);
 
-// init
 createDots();
 showSlide(currentIndex);
 startAutoSlide();
