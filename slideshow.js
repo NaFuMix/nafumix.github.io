@@ -9,7 +9,6 @@ const titleEl = document.getElementById("title");
 const descEl = document.getElementById("description");
 const imgEl = document.getElementById("slideImage");
 const linkEl = document.getElementById("projectLink");
-const progressBar = document.getElementById("progressBar");
 const dotsContainer = document.getElementById("dots");
 
 const textBox = document.querySelector(".text");
