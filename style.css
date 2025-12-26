@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body{
+body {
+    width: 100%;
+    height: 100%;
     font-family: "Kanit", sans-serif;
     background-color: rgb(0, 5, 41);
     color: white;
     margin: 0;
     padding: 0;
 }
-body::after{
+
+body::after {
     width: 100vw;
     height: 100vh;
     content: '';
@@ -19,11 +22,11 @@ body::after{
     z-index: -2;
 }
 
-hr{
+hr {
     width: 90vw;
 }
 
-.container{
+.container {
     height: 100vh;
     display: flex;
     flex-direction: row;
@@ -33,86 +36,76 @@ hr{
     z-index: 1;
 }
 
-.glass{
-    background: linear-gradient(135deg, rgb(255,255,255,0.1),rgb(255,255,255,0));
+.glass {
+    background: linear-gradient(135deg, rgb(255, 255, 255, 0.1), rgb(255, 255, 255, 0));
     box-shadow: 0 8px 32px 0 black;
-    border: 1px solid rgb(255,255,255,0.18);
+    border: 1px solid rgb(255, 255, 255, 0.18);
 }
 
-.card{
+.card {
     border: 2px solid white;
     border-radius: 15px;
     background-color: rgb(0, 5, 41);
     padding: 30px;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s;
     top: 5%;
+    animation: fade_in 2s ease forwards 1.5s;
+    opacity: 0;
+    transform: translateY(200px);
 }
 
-.card h1{
+@keyframes fade_in {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card h1 {
     font-weight: bolder;
     font-size: 40px;
 }
 
-.card h2{
+.card h2 {
     color: #ff8c00;
 }
 
-.card ul li{
+.card ul li {
     font-size: 20px;
 }
 
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-.card::before, .card::after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: conic-gradient(from var(--angle), transparent 0% , purple,blue);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    padding: 5px;
-    border-radius: 10px;
-    animation:  5s spin linear infinite;
-    filter: blur(10px);
-}
-
-.card:hover{
+.card:hover {
     box-shadow: 0px 4px 15px white;
 }
 
-@keyframes spin{
-    from{
-        --angle:0deg;
-    }
-    to{
-        --angle:360deg;
-    }
-}
-
-.card::before{
-    filter: blur(1.5rem);
-    opacity: 0.5;
-}
-
-.picture{
+.picture {
     width: 20%;
     height: 40%;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
     position: relative;
-    animation: mymove 5s infinite;
     background-color: black;
+    opacity: 0;
+    transform: translateY(200px);
+    animation: mymove 5s linear infinite 2s, fade_in 2s ease forwards 2s;
 }
 
-.picture img{
+@keyframes mymove {
+    0% {
+        top: 0px;
+    }
+
+    50% {
+        top: 30px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+.picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -120,56 +113,90 @@ hr{
     border-radius: 50%;
 }
 
-@keyframes mymove {
-  0% {top: 0px;}
-  50% {top: 30px;}
-  100% {top: 0px;}
-}
-
-.picture:hover{
+.picture:hover {
     box-shadow: 2px 2px 15px whitesmoke;
     scale: 1.1;
 }
 
-#icon1{
+#icon1 {
     width: 70px;
     filter: drop-shadow(0px 5px 10px rgb(255, 128, 0));
     position: absolute;
-    animation: myicon1 8s infinite reverse;
+    animation: myicon1 8s infinite reverse, fade_in 2s ease forwards 2.5s;
+    transform: translateY(300px);
+    opacity: 0;
 }
 
 @keyframes myicon1 {
-  0% {top: 75%; right: 5%;}
-  50% {top: 65%;right: 5%;}
-  100% {top: 75%; right: 5%;}
+    0% {
+        top: 75%;
+        right: 5%;
+    }
+
+    50% {
+        top: 65%;
+        right: 5%;
+    }
+
+    100% {
+        top: 75%;
+        right: 5%;
+    }
 }
 
-#icon2{
+#icon2 {
     width: 70px;
     filter: drop-shadow(0px 5px 10px rgb(77, 77, 255));
     position: absolute;
-    animation: myicon2 5s infinite reverse;
+    animation: myicon2 5s infinite reverse, fade_in 2s ease forwards 2.5s;
+    transform: translateY(300px);
+    opacity: 0;
 }
 
 @keyframes myicon2 {
-  0% {top: 85%; right: 20%;}
-  50% {top: 80%;right: 20%;}
-  100% {top: 85%; right: 20%;}
+    0% {
+        top: 85%;
+        right: 20%;
+    }
+
+    50% {
+        top: 80%;
+        right: 20%;
+    }
+
+    100% {
+        top: 85%;
+        right: 20%;
+    }
 }
-#icon3{
+
+#icon3 {
     width: 140px;
     filter: drop-shadow(0px 5px 10px yellow);
     position: absolute;
-    animation: myicon3 7s infinite reverse;
+    animation: myicon3 7s infinite reverse, fade_in 2s ease forwards 2.5s;
+    transform: translateY(300px);
+    opacity: 0;
 }
 
 @keyframes myicon3 {
-  0% {top: 80%; right: 35%;}
-  50% {top: 60%;right: 35%;}
-  100% {top: 80%; right: 35%;}
+    0% {
+        top: 80%;
+        right: 35%;
+    }
+
+    50% {
+        top: 60%;
+        right: 35%;
+    }
+
+    100% {
+        top: 80%;
+        right: 35%;
+    }
 }
 
-nav{
+nav {
     width: 100vw;
     height: 12vh;
     top: 0;
@@ -183,115 +210,87 @@ nav{
     justify-content: space-between;
     overflow: hidden;
     z-index: 10;
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: fade_in 2s forwards;
 }
 
-nav #nav-left{
+nav #nav-left {
     width: 30%;
+    text-decoration: none;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     gap: 10px;
-    transition: all 0.3s ease-in-out;
+    transform: translateX(-600px);
+    opacity: 0;
+    animation: text_slide_in 2s forwards 1.5s;
 }
 
-nav #nav-left h3:hover{
-    animation: textColor 1s both;
-}
-
-@keyframes textColor{
-    from{
-        color: white;
-        text-decoration: none;
-    }
-    to{
-        color: red;
-        text-decoration: underline;
+@keyframes text_slide_in {
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
-nav #nav-icon{
+nav #nav-left h3 {
+    letter-spacing: 3px;
+    position: relative;
+    transition: all 0.5s;
+}
+
+nav #nav-left h3:hover {
+    color: red;
+}
+
+nav #nav-left h3::after {
+    content: '';
+    width: 0;
+    height: 5px;
+    background-color: red;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: all 0.5s;
+}
+
+nav #nav-left h3:hover::after {
+    width: 100%;
+    color: red;
+}
+
+nav #nav-icon {
     width: 11%;
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: center;
     gap: 5px;
+    transform: translateX(300px);
+    animation: text_slide_in 2s forwards 1.5s;
 }
 
-nav a{
+nav a {
     text-decoration: none;
     color: white;
 }
-.img-icon a{
+
+.img-icon a {
     text-decoration: none;
 }
 
-.img-icon img{
+.img-icon img {
     transition: all 0.3s ease-in-out;
     width: 50px;
 }
 
-.img-icon img:hover{
+.img-icon img:hover {
     scale: 1.1;
 }
 
-
-#project{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1;
-    padding-top: 150px;
-    padding-bottom: 100px;
-    gap: 100px;
-}
-
-#project img{
-    width: 60vw;
-    height: 65vh;
-}
-
-.flex-row{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.text-container{
-    border: 2px solid white;
-    height: max-content;
-    border-radius: 15px;
-    width: 30%;
-    padding: 20px;
-    position: relative;
-}
-
-.button{
-    width: 80px;
-    font-size: 20px;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    background-color: rgb(57, 80, 255);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.button:hover{
-    background-color: rgb(32, 47, 255);
-    scale: 1.1;
-}
-
-
-#certificate{
+#certificate {
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -299,17 +298,25 @@ nav a{
     flex-wrap: wrap;
     padding: 150px 100px 0 0;
     gap: 50px;
+    opacity: 0;
+    animation: certificate_fade 2s ease forwards 2s;
 }
 
-.certificate-img{
+@keyframes certificate_fade{
+    100%{
+        opacity: 1;
+    }
+}
+
+.certificate-img {
     transition: scale 0.3s ease;
 }
 
-.certificate-img:hover{
+.certificate-img:hover {
     scale: 1.1;
 }
 
-.certificate-img img{
+.certificate-img img {
     width: 25vw;
     height: auto;
     cursor: pointer;
@@ -317,19 +324,19 @@ nav a{
     transition: all 0.5s ease;
 }
 
-.scale{
+.scale {
     width: 45vw !important;
     font-size: 200%;
 }
 
-.certificate-img h2{
+.certificate-img h2 {
     width: 25vw;
     text-align: center;
     display: block;
     transition: all 0.5s ease;
 }
 
-.slide-container{
+.slide-container {
     width: 100%;
     height: 100%;
     margin-top: 120px;
@@ -341,106 +348,116 @@ nav a{
 }
 
 .slideshow {
-  display: flex;
-  position: relative;
-  width: 90%;
-  height: 70vh;
-  border-radius: 14px;
-  overflow: hidden;
+    display: flex;
+    position: relative;
+    width: 90%;
+    height: 70vh;
+    border-radius: 14px;
+    overflow: hidden;
+    transform: translateY(300px);
+    opacity: 0;
+    animation: fade_in 2s ease forwards 2s;
 }
 
-.text, .image {
-  width: 50%;
-  padding: 35px;
+.text,
+.image {
+    width: 50%;
+    padding: 35px;
 }
 
 .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .text h1 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .text p {
-  margin-bottom: 20px;
-  line-height: 1.6;
-  font-size: 20px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 20px;
 }
 
 .btn {
-  width: fit-content;
-  padding: 10px 20px;
-  background: #ff8c00;
-  color: #000;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: 0.3s;
+    width: fit-content;
+    padding: 10px 20px;
+    background: #ff8c00;
+    color: #000;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .btn:hover {
-  background: #ffa733;
+    background: #ffa733;
 }
 
 .image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .fade {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .fade.show {
-  opacity: 1;
-  transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .controls {
-  text-align: center;
-  margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
+    transform: translateY(300px);
+    opacity: 0;
+    animation: fade_in 2s ease forwards 2.6s;
 }
 
 .controls button {
-  padding: 10px 18px;
-  margin: 0 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background: #333;
-  color: #fff;
-  transition: 0.3s;
+    padding: 10px 18px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    transition: 0.3s;
 }
 
 .controls button:hover {
-  background: #ff8c00;
-  color: #000;
+    background: #ff8c00;
+    color: #000;
 }
 
 .dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    transform: translateY(300px);
+    opacity: 0;
+    animation: fade_in 2s ease forwards 2.3s;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  margin: 0 6px;
-  background: #555;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
+    width: 10px;
+    height: 10px;
+    margin: 0 6px;
+    background: #555;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .dot.active {
-  background: #ff8c00;
-  transform: scale(1.3);
+    background: #ff8c00;
+    transform: scale(1.3);
 }
