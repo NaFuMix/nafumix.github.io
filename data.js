@@ -24,7 +24,7 @@ export const datas = [
         link:"https://nafumix.github.io/Information-API/"
     },
     {
-        header:"Project 5 : BMI CalculatorI",
+        header:"Project 5 : BMI Calculator",
         text:"เว็บคำนวณค่า BMI โดยการใส่ส่วนสูงและน้ำหนักเข้าไป และเว็บจะทำการคำนวณค่า BMI โดยเปรียบเทียบกับค่า BMI สากล เพื่อให้ผู้ใช้สามารถวางแผนและปรับเปลี่ยนการใช้ชีวิตได้ดียิ่งขึ้น",
         img_url:"project/BMI.png",
         link:"https://nafumix.github.io/BMI_Calcultor/BMI.html"
