@@ -266,11 +266,11 @@ nav #nav-left h3:hover::after {
     color: red;
 }
 
-nav #nav-left h3.active {
+nav #nav-left h3.nav-active {
     color: red;
 }
 
-nav #nav-left h3.active::after {
+nav #nav-left h3.nav-active::after {
     width: 100%;
 }
 
