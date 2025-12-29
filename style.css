@@ -88,7 +88,7 @@ hr {
     background-color: black;
     opacity: 0;
     transform: translateY(200px);
-    animation: mymove 5s linear infinite 2s, fade_in 2s ease forwards 2s;
+    animation: mymove 7s linear infinite 2s, fade_in 2s ease forwards 2s;
 }
 
 @keyframes mymove {
@@ -97,7 +97,7 @@ hr {
     }
 
     50% {
-        top: 30px;
+        top: 50px;
     }
 
     100% {
@@ -215,6 +215,11 @@ nav {
     animation: fade_in 2s forwards;
 }
 
+nav #nav-left h1{
+    text-transform: uppercase;
+    color: #fff236;
+}
+
 nav #nav-left {
     width: 30%;
     text-decoration: none;
@@ -261,6 +266,14 @@ nav #nav-left h3:hover::after {
     color: red;
 }
 
+nav #nav-left h3.active {
+    color: red;
+}
+
+nav #nav-left h3.active::after {
+    width: 100%;
+}
+
 nav #nav-icon {
     width: 11%;
     display: flex;
@@ -302,8 +315,8 @@ nav a {
     animation: certificate_fade 2s ease forwards 2s;
 }
 
-@keyframes certificate_fade{
-    100%{
+@keyframes certificate_fade {
+    100% {
         opacity: 1;
     }
 }
